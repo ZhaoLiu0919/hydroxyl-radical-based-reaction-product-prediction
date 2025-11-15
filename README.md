@@ -179,6 +179,4 @@ The generated HTML network includes:
   - Download network data
   - Save as image
 ```
-
-
 **Note**: This tool is for research purposes only. Always validate predictions with experimental data or domain expertise before making critical decisions.
