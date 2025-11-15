@@ -125,7 +125,6 @@ Located in the lower right corner:
 3. **Search Results**:
    - **Found**: Node highlighted in red, view centers on it
    - **Not Found**: Alert message with suggestions
-   - **Multiple Matches**: Shows first match
 
 ---
 
