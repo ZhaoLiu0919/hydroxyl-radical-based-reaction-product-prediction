@@ -53,9 +53,8 @@ hydroxyl-radical-based-reaction-product-prediction/
 │
 ├── Product_prediction.ipynb     # Main Jupyter notebook for predictions
 ├── degradation_model.pkl        # Pre-trained model and reaction database
-├── Chemical_degradation_network.html  # Example visualization output
-├── README.md                    # This file
-└── requirements.txt             # Python dependencies
+├── Chemical_degradation_network.html  # Reaction library
+└── README.md                    # This file
 ```
 
 ## Usage
@@ -159,15 +158,9 @@ Confidence = α × Similarity + β × Template_Frequency + γ × System_Consiste
 ```
 
 Where:
-- **α (0.5)**: Weight for molecular similarity
-- **β (0.3)**: Weight for template frequency
-- **γ (0.2)**: Weight for reaction system consistency
-
-### Special Rules
-
-1. **Perfect Match**: Same molecule in same system → Confidence = 1.0
-2. **System Transfer**: Same molecule in different system → Modified confidence
-3. **General Case**: Standard weighted calculation
+- **α**: Weight for molecular similarity
+- **β**: Weight for template frequency
+- **γ**: Weight for reaction system consistency
 
 ## Visualization Features
 
@@ -185,16 +178,6 @@ The generated HTML network includes:
 - **Export Options**:
   - Download network data
   - Save as image
-
-## Example Compounds
-
-Try these SMILES strings for testing:
-
-```
-CC(C)C(=O)O                    # Isobutyric acid
-CC1=CC=CC=C1                   # Toluene
-CC(=O)OC1=CC=CC=C1            # Phenyl acetate
-O=C(O)C1=CC=CC=C1             # Benzoic acid
 ```
 
 ## Performance Considerations
@@ -204,79 +187,5 @@ O=C(O)C1=CC=CC=C1             # Benzoic acid
 - Caching mechanisms reduce redundant computations
 - Typical prediction time: 1-5 seconds for depth=2
 
-## Limitations
-
-- Predictions are based on template matching from training data
-- Novel reaction mechanisms not in the database won't be predicted
-- Confidence scores are estimates based on molecular similarity
-- Best results for compounds similar to those in the training set
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-### Areas for Improvement
-
-- Additional reaction templates
-- Enhanced confidence scoring algorithms
-- Support for more reaction systems
-- Improved visualization features
-- Performance optimizations
-
-## Citation
-
-If you use this tool in your research, please cite:
-
-```bibtex
-@software{hydroxyl_radical_predictor,
-  title = {Hydroxyl Radical Based Reaction Product Prediction},
-  author = {Your Name},
-  year = {2024},
-  url = {https://github.com/yourusername/hydroxyl-radical-based-reaction-product-prediction}
-}
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- RDKit for molecular operations and fingerprinting
-- NetworkX for graph analysis
-- Vis.js for interactive network visualization
-
-## Contact
-
-For questions, issues, or collaborations, please open an issue on GitHub or contact [your-email@example.com].
-
-## Troubleshooting
-
-### Common Issues
-
-1. **RDKit Import Error**
-   ```bash
-   pip install rdkit-pypi --upgrade
-   ```
-
-2. **Model File Not Found**
-   - Ensure `degradation_model.pkl` is in the same directory as the script
-
-3. **Memory Issues with Large Networks**
-   - Reduce `max_depth` parameter
-   - Increase `confidence_threshold` to filter predictions
-
-4. **Visualization Not Loading**
-   - Check internet connection (requires CDN resources)
-   - Try opening HTML file in different browser
-
-## Version History
-
-- **v1.0.0** (2024-01): Initial release
-  - Basic prediction functionality
-  - Interactive visualization
-  - Support for multiple reaction systems
-
----
 
 **Note**: This tool is for research purposes only. Always validate predictions with experimental data or domain expertise before making critical decisions.
