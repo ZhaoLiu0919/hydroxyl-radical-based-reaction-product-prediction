@@ -180,12 +180,5 @@ The generated HTML network includes:
   - Save as image
 ```
 
-## Performance Considerations
-
-- The model uses pre-computed molecular fingerprints for fast similarity calculations
-- Indexed reaction templates enable rapid lookup
-- Caching mechanisms reduce redundant computations
-- Typical prediction time: 1-5 seconds for depth=2
-
 
 **Note**: This tool is for research purposes only. Always validate predictions with experimental data or domain expertise before making critical decisions.
